@@ -3,12 +3,15 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{polyglossia}
 \usepackage{xspace}
+
+
 \setdefaultlanguage[spelling=modern]{russian}
 \setotherlanguage{english}
 \defaultfontfeatures{Ligatures={TeX},Renderer=Basic}
 \setmainfont[Ligatures={TeX,Historic}]{CMU Serif}
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
+
 
 \usepackage{graphicx}
 \usepackage{minted}
@@ -155,7 +158,7 @@ $Погрешность имеет порядок уменьшения как O(
 
 
 \pagebreak
-\inputminted[linenos, breaklines]{c++}{code/2chinese.cpp} \pagebreak
+%\inputminted[linenos, breaklines]{c++}{code/2chinese.cpp} \pagebreak
 \inputminted[linenos, breaklines]{c++}{code/automaton.cpp} \pagebreak
 \inputminted[linenos, breaklines]{c++}{code/automaton2.cpp} \pagebreak
 \inputminted[linenos, breaklines]{c++}{code/discrete_log.cpp} \pagebreak
@@ -169,8 +172,8 @@ $Погрешность имеет порядок уменьшения как O(
 \textbf{suf array + lcp}
 \inputminted[linenos, breaklines]{c++}{code/suffmas-e-maxx.cpp} \pagebreak
 \inputminted[linenos, breaklines]{c++}{code/kasai.cpp} \pagebreak
-\pagebreak
 \inputminted[linenos, breaklines]{c++}{code/prime_roots.cpp} \pagebreak
+
 \inputminted[linenos, breaklines]{c++}{code/fft_sk.cpp}
 \inputminted[linenos, breaklines]{c++}{code/fft_and_ds.cpp}
 \pagebreak
@@ -184,5 +187,10 @@ $e(D)=t^-(D,x) \cdot \prod\limits_{y\in D} (outdeg(y)-1)!$\\
 
 {\bf Наличие совершенного паросочетания}:\\
 $T$ -- матрица с нулями на диагонали. Если есть ребро $(i, j)$, то $a_{i,j}:=x_{i,j}$, $a_{j,i}=-x_{i,j}$\\
-$\det(T)=0 \Leftrightarrow$ нет совершенного паросочетания.\\
+$\det(T)=0 \Leftrightarrow$ нет совершенного паросочетания.
+\pagebreak
+
+{\bf \Large Whitespace code FFT} \pagebreak
+
+
 \end{document}
