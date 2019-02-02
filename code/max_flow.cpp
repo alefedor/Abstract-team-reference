@@ -38,10 +38,10 @@ int dfs(int v, int flow, int k) {
     if (v == t)
         return flow;
     for (; it[v] < gr[v].size(); it[v]++) {
-        if (d[v] + 1 != d[eds[gr[v][it[v]]].to])
-            continue;
         int num = gr[v][it[v]];
-        int res = dfs(eds[gr[v][it[v]]].to, min(flow, eds[gr[v][it[v]]].c - eds[gr[v][it[v]]].f), k);
+        if (d[v] + 1 != d[num].to])
+            continue;
+        int res = dfs(eds[num].to, min(flow, eds[num].c - eds[num].f), k);
         if (res){
             eds[num].f += res;
             eds[num ^ 1].f -= res;
