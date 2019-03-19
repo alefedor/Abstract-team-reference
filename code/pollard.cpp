@@ -1,3 +1,5 @@
+// pollard begins
+
 const int max_step = 4e5;
 
 unsigned long long gcd(unsigned long long a, unsigned long long b){
@@ -17,10 +19,10 @@ unsigned long long pollard(unsigned long long n){
     unsigned long long x = (rand() + 1) % n, y = 1, g;
     int stage = 2, i = 0;
     g = gcd(get(x, y), n);
-    while (g == 1){
+    while (g == 1) {
         if (i == max_step)
             break;
-        if (i == stage){
+        if (i == stage) {
             y = x;
             stage <<= 1;
         }
@@ -30,3 +32,5 @@ unsigned long long pollard(unsigned long long n){
     }
     return g;
 }
+
+// pollard ends

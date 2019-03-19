@@ -1,3 +1,5 @@
+// convex hull begins
+
 struct Point {
     int x, y;
     Point operator-(const Point& p) const { return {x - p.x, y - p.y}; }
@@ -33,3 +35,5 @@ vector<Point> convex_hull(vector<Point> pt) {
 
     return ch;
 }
+
+// convex hull ends

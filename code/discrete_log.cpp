@@ -1,3 +1,5 @@
+// discrete log in sqrt(p) begins
+
 int k = sqrt((double)p) + 2;
 
 for (int i = k; i >= 1; i--)
@@ -13,3 +15,5 @@ for (int i = 0; i <= k; i++){
             ans = min(an, ans);
     }
 }
+
+// discrete log in sqrt(p) ends

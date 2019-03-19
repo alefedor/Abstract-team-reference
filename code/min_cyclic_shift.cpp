@@ -1,3 +1,5 @@
+// min cyclic shift begins
+
 string min_cyclic_shift (string s) {
 	s += s;
 	int n = (int) s.length();
@@ -16,3 +18,5 @@ string min_cyclic_shift (string s) {
 	}
 	return s.substr (ans, n/2);
 }
+
+// min cyclic shift ends

@@ -1,3 +1,5 @@
+// extended euclid begins
+
 int gcd (int a, int b, int & x, int & y) {
 	if (a == 0) {
 		x = 0; y = 1;
@@ -9,3 +11,5 @@ int gcd (int a, int b, int & x, int & y) {
 	y = x1;
 	return d;
 }
+
+// extended euclid ends

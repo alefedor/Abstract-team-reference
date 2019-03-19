@@ -1,3 +1,5 @@
+// bad hungarian begins
+
 fill(par, par + 301, -1);
 fill(par2, par2 + 301, -1);
 
@@ -46,3 +48,5 @@ for (int v = 0; v < n; v++){
 cout << ans << "\n";
 for (int i = 0; i < n; i++)
     cout << par[i] + 1 << " " << i + 1 << "\n";
+    
+// bad hungarian ends 

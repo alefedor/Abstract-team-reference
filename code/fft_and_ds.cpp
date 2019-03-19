@@ -1,3 +1,5 @@
+// AND-FFT begins
+
 void fast_fourier(vector<int>& a) { // AND-FFT.
     for (int k = 1; k < SZ(a); k *= 2)
 	for (int start = 0; start < (1 << K); start += 2 * k) {
@@ -23,3 +25,5 @@ void inverse_fast_fourier(vector<int>& a) {
 	    }
 	}
 }
+
+// AND-FFT ends

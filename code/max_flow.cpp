@@ -1,3 +1,5 @@
+// max flow begins
+
 struct edge{
     int from, to;
     int c, f, num;
@@ -22,11 +24,13 @@ bool bfs(int k) {
     while (!q.empty()) {
         int v = q.front();
         q.pop();
-        for (int x : gr[v])
-            if (d[eds[x].to] == -1 && eds[x].c - eds[x].f >= (1 << k)){
-                d[eds[x].to] = d[v] + 1;
-                q.push(eds[x].to);
+        for (int x : gr[v]) {
+            int to = eds[x].to;
+            if (d[to] == -1 && eds[x].c - eds[x].f >= (1 << k)){
+                d[to] = d[v] + 1;
+                q.push(to);
             }
+        }
     }
 
     return (d[t] != -1);
@@ -70,8 +74,8 @@ int ans = 0;
 // decomposition
 
 int path_num = 0;
-vector<int> paths[550];
-int flows[550];
+vector<int> paths[max_n];
+int flows[max_n];
 
 int decomp(int v, int flow) {
     if (flow < 1)
@@ -94,3 +98,6 @@ int decomp(int v, int flow) {
 }
 
 while (decomp(s, 1e9 + 5));
+
+// max flow ends
+

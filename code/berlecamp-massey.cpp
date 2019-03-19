@@ -1,3 +1,4 @@
+// berlecamp-massey begins
 
 const int SZ = MAXN;
 
@@ -99,3 +100,5 @@ namespace linear_seq {
         }
     }
 }
+
+// berlecamp-massey ends

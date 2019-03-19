@@ -1,3 +1,5 @@
+// 2-chinese begins
+
 template <typename Info>
 class DSU {
   public:
@@ -226,3 +228,5 @@ int main () {
   }
   return 0;
 }
+
+// 2-chinese ends

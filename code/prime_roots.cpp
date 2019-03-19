@@ -1,3 +1,5 @@
+// prime roots mod n begins
+
 int num = 0;
 long long phi = n, nn = n;
 for (long long x:primes){
@@ -14,7 +16,7 @@ if (nn != 1){
     phi -= phi/nn;
     num++;
 }
-if (!((num == 1 && n % 2 != 0) || n == 4 || n == 2 || (num == 2 && n % 2 == 0 && n % 4 != 0))){
+if (!((num == 1 && n % 2 != 0) || n == 4 || n == 2 || (num == 2 && n % 2 == 0 && n % 4 != 0))) {
     cout << "-1\n";
     continue;
 }
@@ -47,3 +49,5 @@ while (true){
         break;
     }
 }
+
+// prime roots mod n ends

@@ -1,3 +1,5 @@
+// linear sieve begins
+
 const int N = 1000000;
 
 int pr[N + 1], sz = 0;
@@ -14,3 +16,5 @@ for (int i = 2; i <= N; ++i) {
     mu[i] = lp[i] == lp[i / lp[i]] ? 0 : -1 * mu[i / lp[i]];
     phi[i] = phi[i / lp[i]] * (lp[i] == lp[i / lp[i]] ? lp[i] : lp[i] - 1);
 }
+
+// linear sieve ends

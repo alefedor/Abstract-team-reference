@@ -1,3 +1,5 @@
+// simple geometry begins
+
 struct Point {
     double x, y;
     Point operator+(const Point& p) const { return {x + p.x, y + p.y}; }
@@ -78,3 +80,5 @@ inline bool intersect_circle_and_line(const Circle& c, const Line& l, Point& p1,
     p1 = p + n * h, p2 = p - n * h;
     return true;
 }
+
+// simple geometry ends

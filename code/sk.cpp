@@ -1,4 +1,4 @@
-/** Begin fast allocation */
+// sk fast allocation begins
 const int MAX_MEM = 5e8;
 int mpos = 0;
 char mem[MAX_MEM];
@@ -8,19 +8,12 @@ inline void * operator new ( size_t n ) {
 }
 inline void operator delete ( void * ) noexcept { } // must have!
 
-/** End fast allocation */
+// sk fast allocation ends
 
 
-#define pb push_back
-#define mp make_pair
-#define fst first
-#define snd second
-#define ll long long
-#define forn(i, n) for (int i = 0; i < (int) (n); i++)
-#define forlr(i, l, r) for (int i = (int) l; i <= (int) (r); i++)
-#define forrl(i, r, l) for (int i = (int) r; i >= (int) (l); i--)
 
-/** Interface */
+
+// sk fast read-write begins
 
 inline int readChar();
 template <class T = int> inline T readInt();
@@ -114,3 +107,5 @@ struct Flusher {
     }
 } flusher;
 
+
+// sk fast read-write ends

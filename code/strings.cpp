@@ -1,3 +1,4 @@
+// string basis begins
 
 vector<int> getZ(string s){
     vector<int> z;
@@ -44,4 +45,6 @@ int getHash(vector<int> &h, int l, int r){
         res += mod;
     return res;
 }
+
+// string basis ends
 

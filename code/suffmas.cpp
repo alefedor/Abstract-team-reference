@@ -1,5 +1,4 @@
-// O(n)
-#define forn(i, n) for (int i = 0; i < (int)(n); i++)
+// suffix array O(n) begins
 
 typedef vector<char> bits;
 
@@ -82,9 +81,9 @@ void SA_IS(int *s, int *SA, int n, int K) { // require last symbol is 0
     induceSAl(t, SA, s, bkt, n, K);
     induceSAs(t, SA, s, bkt, n, K);
 }
-// O(n) ended
+// suffix array O(n) ends
 
-// O(n logn)
+// suffix array O(n log n) begins
 string str;
 int N, m, SA [MAX_N], LCP [MAX_N];
 int x [MAX_N], y [MAX_N], w [MAX_N], c [MAX_N];
@@ -109,6 +108,7 @@ void DA () {
     }
 }
 
+// common for all algorithms
 void kasaiLCP () {
     for (int i = 0; i < N; i++) c[SA[i]] = i;
     for (int i = 0, j, k = 0; i < N; LCP [c[i++]] = k)
@@ -122,4 +122,4 @@ void suffixArray () { // require last symbol is char(0)
     DA ();
     kasaiLCP ();
 }
-// O(n logn) ended
+// suffix array O(n log n) ends

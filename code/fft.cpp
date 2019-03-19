@@ -1,3 +1,5 @@
+// FFT begins
+
 const int LOG = 19;
 const int N = (1 << LOG);
 
@@ -45,3 +47,5 @@ void inv_fft(vector<cd>& a) {
     for (cd& elem: a)
         elem /= N;
 }
+
+// FFT ends
