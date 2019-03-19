@@ -90,4 +90,4 @@ int get(ftype x) {
     return dot(query, hull[it - vecs.begin()]);
 }
 
-// honvex hull trick ends
+// convex hull trick ends
