@@ -21,9 +21,9 @@ D[N][K]=\sum\limits_{S=1}^N \binom {N-1} {S-1} Conn_S D[N-S][K-1]
 Miller-Rabbin
 a=a^t
 FOR i = 1...s
-    if a^2=1 && |a|!=1
-        NOT PRIME
-    a=a^2
+  if a^2=1 && |a|!=1
+    NOT PRIME
+  a=a^2
 return a==1 ? PRIME : NOT PRIME
 
 

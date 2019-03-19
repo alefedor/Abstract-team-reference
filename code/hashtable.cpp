@@ -6,7 +6,7 @@ gp_hash_table<int, int> table;
 
 const int RANDOM = chrono::high_resolution_clock::now().time_since_epoch().count();
 struct chash {
-    int operator()(int x) { return hash<int>{}(x ^ RANDOM); }
+  int operator()(int x) { return hash<int>{}(x ^ RANDOM); }
 };
 gp_hash_table<key, int, chash> table;
 
