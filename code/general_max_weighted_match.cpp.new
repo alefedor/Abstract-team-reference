@@ -1,5 +1,6 @@
-// general max weighet match begins
+// general max weighted match begins
 // |V| <= 400, |E| <= 10^5
+// max weight, 1 <= w <= 5*10^8 
 
 #define DIST(e) (lab[e.u]+lab[e.v]-g[e.u][e.v].w*2)
 using namespace std;
