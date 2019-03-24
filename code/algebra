@@ -8,15 +8,15 @@ Newton
 x_{i+1}=x_i-f(x_i)/f'(x_i)
 
 Catalan
-C_n=\sum\limits_{k=0}^{n-1} C_{k} C_{n-1-k}
-C_i=\frac 1 {n + 1} \binom {2n} {n}
+C_n = \sum \limits_{k=0}^{n-1} C_{k} C_{n-1-k}
+C_i = \frac 1 {n + 1} \binom {2n} {n}
 
 G_N:=2^{n(n-1)/2}
 Количество связных помеченных графов
-Conn_N = G_N - \frac 1 N \sum\limits_{K=1}^{N-1} K \binom N K Conn_K G_{N-K}
+Conn_N = G_N - \frac 1 N \sum \limits_{K=1}^{N-1} K \binom N K Conn_K G_{N-K}
 
 Количество помеченных графов с K компонентами связности
-D[N][K]=\sum\limits_{S=1}^N \binom {N-1} {S-1} Conn_S D[N-S][K-1]
+D[N][K]=\sum \limits_{S=1}^N \binom {N-1} {S-1} Conn_S D[N-S][K-1]
 
 Miller-Rabbin
 a=a^t
@@ -32,7 +32,7 @@ return a==1 ? PRIME : NOT PRIME
 x_i := a+ih, i=0\ldots 2n
 h = \frac {b-a} {2n}
 
-\int = (f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+2f(x_4)+\ldots+4f(x_{2n-1})+f(x_{2n}))) \frac h 3
+\int = (f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + 2f(x_4) + \ldots + 4f(x_{2n-1}) + f(x_{2n}))) \frac h 3
 Погрешность имеет порядок уменьшения как O(n^4).
 
 // algebra ends
