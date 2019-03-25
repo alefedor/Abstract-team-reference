@@ -56,7 +56,7 @@ bool gauss(vector<vector<pair<int, elem_t>>> rows, vector<elem_t> &res) {
       }
 
       auto cond = [&a](const pair<int, elem_t>& p) { return isZero(a[p.first]); };
-      rows[i].erase(std::remove_if(rows[i].begin(), rows[i].end(), cond), rows[i].end());
+      rows[i].erase(std::remove_if (rows[i].begin(), rows[i].end(), cond), rows[i].end());
     }
 
     bool ok = false;

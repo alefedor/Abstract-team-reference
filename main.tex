@@ -198,7 +198,11 @@ holds for every $k$ in $1\leq k\leq n$ .
 \inputminted[linenos, breaklines]{c++}{code/general_max_weighted_match.cpp}
 \inputminted[linenos, breaklines]{c++}{code/planar.cpp}
 \inputminted[linenos, breaklines]{c++}{code/hashtable.cpp}
+xmodmap -e 'keycode 94='\\
+setxkbmap us \\
+\vspace*{\fill}
 \pagebreak
+
 {\textbf DM}\\
 {\bf Кол-во корневых деревьев}:\\
 $t(G)=\frac 1 n \lambda_2 \ldots \lambda_n$ ($\lambda_1=0$)\\
@@ -230,8 +234,4 @@ $f(S)==\hat{f}(|S|, S)$\\\\
 $(\hat{f} \otimes \hat{g})(k, X) := \sum\limits_{j=0}^k \hat{f}(j, X)\hat{g}(k - j, X)$\\
 $(f*g)(S) = \sum\limits_{X\subseteq S} (-1)^{|S\setminus X|}(\hat{f}\otimes\hat{g})(|S|, X)$\\
 calculate using $f_j$!\\\\
-\pagebreak
-
-xmodmap -e 'keycode 94='\\
-setxkbmap us \\
 \end{document}
