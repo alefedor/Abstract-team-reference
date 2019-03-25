@@ -1,12 +1,14 @@
 // FFT begins
 
-const int LOG = 19;
-const int N = (1 << LOG);
+const int MAX_LOG = 17;
+const int MAXN = (1 << MAX_LOG);
+int LOG = MAX_LOG;
+int N = MAXN;
 
 typedef std::complex<double> cd;
 
-int rev[N];
-cd W[N];
+int rev[MAXN];
+cd W[MAXN];
 
 void precalc() {
   const double pi = std::acos(-1);
@@ -34,7 +36,7 @@ void fft(vector<cd>& a) {
         cd y = a[start + pos + (1 << lvl)];
 
         y *= W[pos << (LOG - 1 - lvl)];
-        
+
         a[start + pos] = x + y;
         a[start + pos + (1 << lvl)] = x - y;
       }
@@ -42,10 +44,50 @@ void fft(vector<cd>& a) {
 
 void inv_fft(vector<cd>& a) {
   fft(a);
-  std::reverse(a.begin() + 1, a.end());
-  
+  std::reverse(a.begin() + 1, a.begin() + N);
+
   for (cd& elem: a)
     elem /= N;
+}
+
+
+vector<cd> mul_fft(vector<cd> a, vector<cd> b, int n = N) {
+  if (N != n) {
+    N = n;
+    LOG = round(log2(N));
+    precalc();
+  }
+  fft(a);
+  fft(b);
+
+  vector<cd> c(n);
+  for (int i = 0; i < n; i++) {
+    c[i] = a[i] * b[i];
+  }
+
+  inv_fft(c);
+  return c;
+}
+
+
+vector<cd> inv_poly(vector<cd>& a, int n = N) {
+  if (n == 1) {
+    vector<cd> res(1);
+    res[0] = cd(1) / a[0];
+    return res;
+  }
+  vector<cd> r = inv_poly(a, n / 2);
+  r.resize(n);
+  vector<cd> q = mul_fft(a, r, n);
+  for (int i = 0; i < n / 2; i++) {
+    q[i] = -q[n / 2 + i];
+    q[n / 2 + i] = 0;
+  }
+  vector<cd> c = mul_fft(q, r, n);
+  for (int i = n / 2; i < n; i++) {
+    r[i] = c[i - n / 2];
+  }
+  return r;
 }
 
 // FFT ends
