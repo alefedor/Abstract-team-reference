@@ -167,6 +167,7 @@ holds for every $k$ in $1\leq k\leq n$ .
 \inputminted[linenos, breaklines]{c++}{code/euclid.cpp}
 \inputminted[linenos, breaklines]{c++}{code/fft.cpp}
 \inputminted[linenos, breaklines]{c++}{code/gauss.cpp}
+\inputminted[linenos, breaklines]{c++}{code/stable_gauss.cpp}
 \inputminted[linenos, breaklines]{c++}{code/geometry.h}
 \inputminted[linenos, breaklines]{c++}{code/convex_hull.h}
 \inputminted[linenos, breaklines]{c++}{code/convex_hull_trick.cpp}
@@ -179,6 +180,7 @@ holds for every $k$ in $1\leq k\leq n$ .
 \inputminted[linenos, breaklines]{c++}{code/min_cyclic_shift.cpp}
 \inputminted[linenos, breaklines]{c++}{code/suffmas.cpp}
 \inputminted[linenos, breaklines]{c++}{code/automaton.cpp}
+\inputminted[linenos, breaklines]{c++}{code/aho.cpp}
 \inputminted[linenos, breaklines]{c++}{code/pollard.cpp}
 \inputminted[linenos, breaklines]{c++}{code/sieve.cpp}
 \inputminted[linenos, breaklines]{c++}{code/discrete_log.cpp}
@@ -201,9 +203,30 @@ $t(G)=\frac 1 n \lambda_2 \ldots \lambda_n$ ($\lambda_1=0$)\\
 $e(D)=t^-(D,x) \cdot \prod\limits_{y\in D} (outdeg(y)-1)!$\\
 {\bf Наличие совершенного паросочетания}:\\
 $T$ -- матрица с нулями на диагонали. Если есть ребро $(i, j)$, то $a_{i,j}:=x_{i,j}$, $a_{j,i}=-x_{i,j}$\\
-$\det(T)=0 \Leftrightarrow$ нет совершенного паросочетания.
-
+$\det(T)=0 \Leftrightarrow$ нет совершенного паросочетания.\\\\
+{\bf Fast subset convolution}\\
+$(f * g)(S) := \sum\limits_{T \subseteq S} f(T) g(S\setminus T)$\\
+$\hat{f}(X) := \sum\limits_{S \subseteq X}f(S)$\\
+$f(S)=\sum\limits_{X\subseteq S}(-1)^{|S\setminus X|} \hat{f}(X)$\\\\
+$\hat{f}_0(X) := f(X)$\\
+$\hat{f}_j(X) = \begin{cases}
+\hat{f}_{j - 1}(X) \hspace*{\fill} ~~if~~ j \notin X\\
+\hat{f}_{j - 1}(X \setminus j) + \hat{f}_{j - 1}(X) \hspace*{\fill} ~~if~~ j \in X 
+\end{cases}$\\
+$\hat{f}_n(X) == \hat{f}(X)$\\\\
+$f_0(S):=\hat{f}(S)$\\
+$f_j(S) = \begin{cases}
+f_{j - 1}(S) \hspace*{\fill} ~~if~~ j \notin S\\
+-f_{j - 1}(S \setminus j) + f_{j - 1}(S) \hspace*{\fill} ~~if~~ j \in S 
+\end{cases}$\\
+$f_n(S) == f(S)$\\\\
+$\hat{f}(k, X) := \sum\limits_{S \subseteq, |S|=k} f(S)$\\
+$f(S)==\hat{f}(|S|, S)$\\\\
+$(\hat{f} \otimes \hat{g})(k, X) := \sum\limits_{j=0}^k \hat{f}(j, X)\hat{g}(k - j, X)$\\
+$(f*g)(S) = \sum\limits_{X\subseteq S} (-1)^{|S\setminus X|}(\hat{f}\otimes\hat{g})(|S|, X)$\\
+calculate using $f_j$!\\\\
 \pagebreak
+
 xmodmap -e 'keycode 94='\\
 setxkbmap us \\
 \end{document}
