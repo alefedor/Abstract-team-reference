@@ -201,4 +201,4 @@ int main() {
   for (int u = 1; u <= n; ++u) cout << match[u] << ' ';
 }
 
-// general max weighet match ends
+// general max weighted match ends
